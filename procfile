@@ -1,1 +1,1 @@
-web: gunicorn custofood.wsgi --log-file -
+web: gunicorn CustoFood.wsgi --log-file -
