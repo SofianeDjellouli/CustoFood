@@ -28,11 +28,29 @@ class CategoriesSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class ChoiceSerializer(serializers.ModelSerializer):
+    options = serializers.SlugRelatedField(
+        many=True,
+        queryset=Options.objects.all(),
+        slug_field='option'
+    )
+    product = serializers.SlugRelatedField(
+        queryset=Products.objects.all(),
+        slug_field='product'
+    )
+
     class Meta:
         model = Choice
         fields = '__all__'
 
 class CartSerializer(serializers.ModelSerializer):
+    client = serializers.SlugRelatedField(
+        queryset=User.objects.all(),
+        slug_field='client'
+    )
+    choices = serializers.SlugRelatedField(
+        queryset=Choice.objects.all(),
+        slug_field='product'
+    )
     class Meta:
         model = Cart
         fields = '__all__'
