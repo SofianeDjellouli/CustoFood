@@ -14,5 +14,5 @@ urlpatterns = [
 	url(r'^cart/$', views.CartList.as_view()),
 	url(r'^cart/(?P<pk>[0-9]+)/$', views.CartDetail.as_view()),
 ]
-(?P<pk>[0-9]+)/
+
 urlpatterns = format_suffix_patterns(urlpatterns)
