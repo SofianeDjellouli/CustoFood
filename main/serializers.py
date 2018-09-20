@@ -12,6 +12,17 @@ class ProductsSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 class CategoriesSerializer(serializers.ModelSerializer):
+    options = serializers.SlugRelatedField(
+        many=True,
+        queryset=Options.objects.all(),
+        slug_field='option'
+    )
+    products = serializers.SlugRelatedField(
+        many=True,
+        queryset=Products.objects.all(),
+        slug_field='product'
+    )
+
     class Meta:
         model = Categories
         fields = '__all__'
