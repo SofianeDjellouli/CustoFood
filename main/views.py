@@ -22,23 +22,23 @@ class CartList(generics.ListCreateAPIView):
     queryset = Cart.objects.all()
     serializer_class = CartSerializer
 
-# class OptionsList(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = Options.objects.all()
-#     serializer_class = OptionsSerializer
+class OptionDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Options.objects.all()
+    serializer_class = OptionsSerializer
 
-# class ProductsList(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = Products.objects.all()
-#     serializer_class = ProductsSerializer
+class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Products.objects.all()
+    serializer_class = ProductsSerializer
 
-# class CategoriesList(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = Categories.objects.all()
-#     serializer_class = CategoriesSerializer
+class CategoryDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Categories.objects.all()
+    serializer_class = CategoriesSerializer
 
-# class ChoiceList(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = Choice.objects.all()
-#     serializer_class = ChoiceSerializer
+class ChoiceDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Choice.objects.all()
+    serializer_class = ChoiceSerializer
 
-# class CartList(generics.RetrieveUpdateDestroyAPIView):
-#     queryset = Cart.objects.all()
-#     serializer_class = CartSerializer
+class CartDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Cart.objects.all()
+    serializer_class = CartSerializer
 
