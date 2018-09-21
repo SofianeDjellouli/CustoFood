@@ -6,6 +6,10 @@ class OptionsList(generics.ListCreateAPIView):
     queryset = Options.objects.all()
     serializer_class = OptionsSerializer
 
+class OptionTypeList(generics.ListCreateAPIView):
+    queryset = OptionType.objects.all()
+    serializer_class = OptionTypeSerializer
+
 class ProductsList(generics.ListCreateAPIView):
     queryset = Products.objects.all()
     serializer_class = ProductsSerializer
@@ -33,6 +37,10 @@ class CartList(generics.ListCreateAPIView):
 class OptionDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Options.objects.all()
     serializer_class = OptionsSerializer
+
+class OptionTypeDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = OptionType.objects.all()
+    serializer_class = OptionTypeSerializer
 
 class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Products.objects.all()

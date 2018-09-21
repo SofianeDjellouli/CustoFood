@@ -7,6 +7,8 @@ urlpatterns = [
 	url(r'', admin.site.urls),
     url(r'^options/$', views.OptionsList.as_view()),
     url(r'^options/(?P<pk>[0-9]+)/$', views.OptionDetail.as_view()),
+    url(r'^optiontypes/$', views.OptionTypeList.as_view()),
+    url(r'^optiontypes/(?P<pk>[0-9]+)/$', views.OptionTypeDetail.as_view()),
     url(r'^products/$', views.ProductsList.as_view()),
     url(r'^products/(?P<pk>[0-9]+)/$', views.ProductDetail.as_view()),
     url(r'^categories/$', views.CategoriesList.as_view()),

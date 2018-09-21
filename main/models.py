@@ -3,22 +3,27 @@ from django.contrib.auth.models import User
 
 class Options(models.Model):
     option = models.CharField(max_length=100)
-    # category = models.ForeignKey(Categories, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.option
 
+class OptionType(models.Model):
+    optiontype = models.CharField(max_length=100)
+    options = models.ManyToManyField(Options)
+    
+    def __str__(self):
+        return self.optiontype
+
 class Products(models.Model):
     product = models.CharField(max_length=100)
     price = models.DecimalField(max_digits=5, decimal_places=2)
-    # category = models.ForeignKey(Categories, on_delete=models.CASCADE)
     
     def __str__(self):
         return self.product
 
 class Categories(models.Model):
     category = models.CharField(max_length=100)
-    options = models.ManyToManyField(Options)
+    optiontype = models.ManyToManyField(OptionType)
     products = models.ManyToManyField(Products)
 
     def __str__(self):
