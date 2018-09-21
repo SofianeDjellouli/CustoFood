@@ -14,6 +14,14 @@ class CategoriesList(generics.ListCreateAPIView):
     queryset = Categories.objects.all()
     serializer_class = CategoriesSerializer
 
+    # def list(self,request):
+    # 	print(self.request.META)
+    # 	queryset = self.get_queryset()
+    #     serializer = CategoriesSerializer(queryset, many=True)
+    #     return Response(serializer.data)
+        
+    
+
 class ChoiceList(generics.ListCreateAPIView):
     queryset = Choice.objects.all()
     serializer_class = ChoiceSerializer

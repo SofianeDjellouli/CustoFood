@@ -22,7 +22,7 @@ class Categories(models.Model):
     products = models.ManyToManyField(Products)
 
     def __str__(self):
-        return self.name
+        return self.category
 
 class Choice(models.Model):
 	options = models.ManyToManyField(Options)
