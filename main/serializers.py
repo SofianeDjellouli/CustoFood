@@ -1,11 +1,11 @@
 from rest_framework import serializers
 from main.models import *
 
-class do(serializers.SlugRelatedField):
-    def to_representation(self, obj):
-        dict={}
-        dict[obj.optiontype]=[a for a in OptionType.objects.get(optiontype=obj).options.values_list('option', flat=True)]
-        return str(dict)
+# class do(serializers.SlugRelatedField):
+#     def to_representation(self, obj):
+#         dict={}
+#         dict[obj.optiontype]=[a for a in OptionType.objects.get(optiontype=obj).options.values_list('option', flat=True)]
+#         return str(dict)
 
 class OptionsSerializer(serializers.ModelSerializer):
     class Meta:
@@ -30,7 +30,7 @@ class OptionTypeSerializer(serializers.ModelSerializer):
 
 
 class CategoriesSerializer(serializers.ModelSerializer):
-    optiontype = do(
+    optiontype = serializers.SlugRelatedField(
         many=True,
         queryset=OptionType.objects.all(),
         slug_field='optiontype'
