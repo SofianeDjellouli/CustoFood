@@ -37,12 +37,14 @@ class OptionTypeDetail(generics.RetrieveUpdateDestroyAPIView):
     serializer_class = OptionTypeSerializer
 
     def get_object(self):
-    	# Allows multiple fields lookup and case insensitive filter
-	    queryset = self.get_queryset()
-	    filter = {k+'__icontains':v for k,v in self.kwargs.items() if v}
-	    obj = get_object_or_404(queryset, **filter)
-	    self.check_object_permissions(self.request, obj)
-	    return obj
+        # Allows multiple fields lookup and case insensitive filter
+        queryset = self.get_queryset()
+        print(self.kwargs) 
+        filter = {k+'__icontains':v for k,v in self.kwargs.items() if v}
+        print(filter) 
+        obj = get_object_or_404(queryset, **filter)
+        self.check_object_permissions(self.request, obj)
+        return obj
 
 class ProductDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Products.objects.all()
